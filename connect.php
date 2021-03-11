@@ -1,14 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
+$conn = mysqli_connect("localhost","root","","bookstore");
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect " . mysqli_connect_error();
+  }else{
+    //echo "Connect to database ";
+  }
+  mysqli_set_charset($conn,'utf8');
 ?>
